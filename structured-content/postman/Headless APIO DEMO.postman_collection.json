@@ -1,0 +1,755 @@
+{
+	"info": {
+		"_postman_id": "e83aeb91-9a8f-4b48-8d24-e3368aff83c8",
+		"name": "Headless APIO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Root",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/o/api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Content Spaces",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/content-space",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"content-space"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Structured Content from Liferay",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/content-space/20127/structured-contents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"content-space",
+						"20127",
+						"structured-contents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Structured Content from title EQ",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/content-space/20127/structured-contents?filter=(title eq 'Nadar es bueno')",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"content-space",
+						"20127",
+						"structured-contents"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "(title eq 'Nadar es bueno')"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sort Structured Content by title",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/content-space/20127/structured-contents?sort=title",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"content-space",
+						"20127",
+						"structured-contents"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "title"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sort Structured Content from dateModified",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/content-space/20127/structured-contents?sort=dateModified:desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"content-space",
+						"20127",
+						"structured-contents"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "dateModified:desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Structured Content from dateModified GT",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/content-space/20127/structured-contents?filter=(dateModified gt 2018-10-03T00:00Z)",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"content-space",
+						"20127",
+						"structured-contents"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "(dateModified gt 2018-10-03T00:00Z)"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Structured Content from dataModified LT",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/content-space/20127/structured-contents?filter=(dateModified lt 2018-10-03T00:00Z)",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"content-space",
+						"20127",
+						"structured-contents"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "(dateModified lt 2018-10-03T00:00Z)"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Structured Content from dateModified GE",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/content-space/20127/structured-contents?filter=(dateModified ge 2018-09-13T11:45Z)",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"content-space",
+						"20127",
+						"structured-contents"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "(dateModified ge 2018-09-13T11:45Z)"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Structured Content from dateModified AND title",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/content-space/20127/structured-contents?filter=(dateModified gt 2018-10-03T00:00Z and title eq 'Exclusive Offers for Subscriptors')",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"content-space",
+						"20127",
+						"structured-contents"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "(dateModified gt 2018-10-03T00:00Z and title eq 'Exclusive Offers for Subscriptors')"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Structured Content from dateModified OR title",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/content-space/20127/structured-contents?filter=(dateModified gt 2018-10-03T00:00Z or title eq 'Crossfit es una nueva religión')",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"content-space",
+						"20127",
+						"structured-contents"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "(dateModified gt 2018-10-03T00:00Z or title eq 'Crossfit es una nueva religión')"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Structured Content with Invalid Filter",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/content-space/20127/structured-contents?filter=invalid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"content-space",
+						"20127",
+						"structured-contents"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "invalid"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter StructuredContent by ContentStructure field",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/content-space/20127/structured-contents?filter=(contentStructure eq 'http://localhost:8080/o/api/p/content-structures/99509')",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"content-space",
+						"20127",
+						"structured-contents"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "(contentStructure eq 'http://localhost:8080/o/api/p/content-structures/99509')"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter StructuredContent by Structure Field (Keyword Text)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "EN-US",
+						"type": "text"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/content-space/20127/structured-contents?filter=values/_99509_Headline eq '10 Year Anniversary'",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"content-space",
+						"20127",
+						"structured-contents"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "values/_99509_Headline eq '10 Year Anniversary'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter StructuredContent by Structure Field (Integer)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/content-space/20127/structured-contents?filter=(values/_99509_Participants gt 10000)",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"content-space",
+						"20127",
+						"structured-contents"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "(values/_99509_Participants gt 10000)"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
