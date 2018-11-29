@@ -1,0 +1,409 @@
+{
+	"info": {
+		"_postman_id": "24daf232-3a70-4ca4-a6a9-cc520b91e321",
+		"name": "Headless APIs Workflow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Custom actions",
+			"item": [
+				{
+					"name": "Assign to me (Test Test)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "test@liferay.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/o/api/c/workflow-tasks/42499/assign-to-me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"o",
+								"api",
+								"c",
+								"workflow-tasks",
+								"42499",
+								"assign-to-me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign to user (Test Test)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "test@liferay.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"assigneeId\": \"\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/o/api/c/workflow-tasks/42499/assign-to-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"o",
+								"api",
+								"c",
+								"workflow-tasks",
+								"42499",
+								"assign-to-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change transition (Test Test)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "test@liferay.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"transitionName\": \"\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/o/api/c/workflow-tasks/36633/change-transition",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"o",
+								"api",
+								"c",
+								"workflow-tasks",
+								"36633",
+								"change-transition"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update due date (Test Test)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "test@liferay.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"dueDate\": \"2018-12-31T23:59Z\", \"comment\": \"This is a comment\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/o/api/c/workflow-tasks/36704/update-due-date",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"o",
+								"api",
+								"c",
+								"workflow-tasks",
+								"36704",
+								"update-due-date"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Workflow tasks (Test Test)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/my-user-account/20139/workflow-tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"my-user-account",
+						"20139",
+						"workflow-tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assigned to me (Test Test)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/r/workflow-tasks/assigned-to-me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"r",
+						"workflow-tasks",
+						"assigned-to-me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assigned to my roles (Test Test)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/r/workflow-tasks/assigned-to-my-roles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"r",
+						"workflow-tasks",
+						"assigned-to-my-roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Single task (Test Test)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/workflow-tasks/36775",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"workflow-tasks",
+						"36775"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Workflow logs of a single task (Test Test)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/workflow-tasks/36775/workflow-logs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"workflow-tasks",
+						"36775",
+						"workflow-logs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
