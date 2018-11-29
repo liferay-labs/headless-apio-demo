@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "0fa0357c-7d06-439f-b7ed-0862c6d795c2",
+		"name": "Headless APIs Forms",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Form (Test Test)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/form/36614",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"form",
+						"36614"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Form embedded structure (Test Test)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/form/36614?embedded=structure",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"form",
+						"36614"
+					],
+					"query": [
+						{
+							"key": "embedded",
+							"value": "structure"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
