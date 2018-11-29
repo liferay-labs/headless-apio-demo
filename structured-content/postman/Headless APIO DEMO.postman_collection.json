@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e83aeb91-9a8f-4b48-8d24-e3368aff83c8",
+		"_postman_id": "113b6330-714c-44a3-965b-04fbf62d134f",
 		"name": "Headless APIO",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1019,6 +1019,234 @@
 						{
 							"key": "filter",
 							"value": "creator eq 'http://localhost:8080/o/api/p/user-account/{{userId}}'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Structured Content from Liferay (display only keywords)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/content-space/{{liferayContentSpaceId}}/structured-contents?fields%5BStructuredContent%5D=keywords",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"content-space",
+						"{{liferayContentSpaceId}}",
+						"structured-contents"
+					],
+					"query": [
+						{
+							"key": "fields%5BStructuredContent%5D",
+							"value": "keywords"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter StructuredContent by Keywords ANY EQ",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/content-space/{{liferayContentSpaceId}}/structured-contents?filter=(keywords/any(k:k eq 'health'))&fields%5BStructuredContent%5D=keywords",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"content-space",
+						"{{liferayContentSpaceId}}",
+						"structured-contents"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "(keywords/any(k:k eq 'health'))"
+						},
+						{
+							"key": "fields%5BStructuredContent%5D",
+							"value": "keywords"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter StructuredContent by Keywords ANY CONTAINS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/content-space/{{liferayContentSpaceId}}/structured-contents?filter=(keywords/any(k:contains(k,'run')))&fields%5BStructuredContent%5D=keywords",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"content-space",
+						"{{liferayContentSpaceId}}",
+						"structured-contents"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "(keywords/any(k:contains(k,'run')))"
+						},
+						{
+							"key": "fields%5BStructuredContent%5D",
+							"value": "keywords"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter StructuredContent by Keywords ANY OR EQ CONTAINS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test@liferay.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/o/api/p/content-space/{{liferayContentSpaceId}}/structured-contents?filter=(keywords/any(k:k eq 'swimming')) or (keywords/any(k:contains(k,'run')))&fields%5BStructuredContent%5D=keywords",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"p",
+						"content-space",
+						"{{liferayContentSpaceId}}",
+						"structured-contents"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "(keywords/any(k:k eq 'swimming')) or (keywords/any(k:contains(k,'run')))"
+						},
+						{
+							"key": "fields%5BStructuredContent%5D",
+							"value": "keywords"
 						}
 					]
 				}
