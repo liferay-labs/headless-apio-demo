@@ -1,15 +1,15 @@
 {
 	"info": {
-		"_postman_id": "24daf232-3a70-4ca4-a6a9-cc520b91e321",
-		"name": "Headless APIs Workflow",
+		"_postman_id": "5594c518-7e8d-4886-83bc-10544e1231fc",
+		"name": "Headless APIO Workflow",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Custom actions",
+			"name": "Actions",
 			"item": [
 				{
-					"name": "Assign to me (Test Test)",
+					"name": "Assign workflow task to me",
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -31,6 +31,11 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/hal+json\n",
 								"type": "text"
 							}
 						],
@@ -58,7 +63,7 @@
 					"response": []
 				},
 				{
-					"name": "Assign to user (Test Test)",
+					"name": "Assign workflow task to user",
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -81,6 +86,11 @@
 								"key": "Content-Type",
 								"type": "text",
 								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/hal+json",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -107,7 +117,7 @@
 					"response": []
 				},
 				{
-					"name": "Change transition (Test Test)",
+					"name": "Change workflow task transition",
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -130,6 +140,11 @@
 								"key": "Content-Type",
 								"type": "text",
 								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/hal+json",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -156,7 +171,7 @@
 					"response": []
 				},
 				{
-					"name": "Update due date (Test Test)",
+					"name": "Update workflow task due date",
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -204,10 +219,32 @@
 					},
 					"response": []
 				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "52fded47-64a4-426b-90cb-412d1dde4106",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "8d8886fa-7843-4ffa-a1e5-0abd1ae10e28",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
 			]
 		},
 		{
-			"name": "Workflow tasks (Test Test)",
+			"name": "Get tasks assigned to user",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -225,50 +262,13 @@
 					]
 				},
 				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:8080/o/api/p/my-user-account/20139/workflow-tasks",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"o",
-						"api",
-						"p",
-						"my-user-account",
-						"20139",
-						"workflow-tasks"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Assigned to me (Test Test)",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "username",
-							"value": "test@liferay.com",
-							"type": "string"
-						},
-						{
-							"key": "password",
-							"value": "test",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": ""
@@ -293,7 +293,7 @@
 			"response": []
 		},
 		{
-			"name": "Assigned to my roles (Test Test)",
+			"name": "Get tasks assigned to user roles",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -311,7 +311,13 @@
 					]
 				},
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": ""
@@ -336,7 +342,7 @@
 			"response": []
 		},
 		{
-			"name": "Single task (Test Test)",
+			"name": "Get task",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -354,7 +360,13 @@
 					]
 				},
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": ""
@@ -378,16 +390,22 @@
 			"response": []
 		},
 		{
-			"name": "Workflow logs of a single task (Test Test)",
+			"name": "Get workflow task logs",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/o/api/p/workflow-tasks/36775/workflow-logs",
+					"raw": "http://localhost:8080/o/api/p/workflow-tasks/36564/workflow-logs",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -398,12 +416,49 @@
 						"api",
 						"p",
 						"workflow-tasks",
-						"36775",
+						"36564",
 						"workflow-logs"
 					]
 				}
 			},
 			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "test",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "test",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "8b3903c1-f8a2-46f5-a2df-e0bb3107dd25",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e0425398-c56e-4ea4-9522-d61f59a9eb2a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }

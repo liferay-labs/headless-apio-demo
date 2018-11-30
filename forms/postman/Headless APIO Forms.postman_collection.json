@@ -1,15 +1,21 @@
 {
 	"info": {
-		"_postman_id": "0fa0357c-7d06-439f-b7ed-0862c6d795c2",
-		"name": "Headless APIs Forms",
+		"_postman_id": "6ada73ed-333e-406a-bb19-8d8b1c26e79f",
+		"name": "Headless APIO Forms",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Form (Test Test)",
+			"name": "Get form",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": ""
@@ -33,10 +39,16 @@
 			"response": []
 		},
 		{
-			"name": "Form embedded structure (Test Test)",
+			"name": "Get form with structure embedded",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": ""
@@ -64,6 +76,43 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "test",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "test",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "97606831-af2e-4bcb-ae46-41eea2b5af3c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "77452db8-e0c2-446e-ab4c-75318cb8c920",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
