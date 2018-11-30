@@ -355,6 +355,11 @@
 							{
 								"key": "Accept",
 								"value": "application/hal+json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -463,6 +468,11 @@
 							{
 								"key": "Accept",
 								"value": "application/hal+json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-Us",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -517,6 +527,11 @@
 							{
 								"key": "Accept",
 								"value": "application/hal+json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -696,7 +711,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8080/o/api/p/content-space/{{liferayContentSpaceId}}/structured-contents?filter=values/_{{eventResultStructureId}}_EventType eq 'value 1'",
+							"raw": "http://localhost:8080/o/api/p/content-space/{{liferayContentSpaceId}}/structured-contents?filter=values/_{{eventResultStructureId}}_EventType eq 'value 2'",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -713,7 +728,7 @@
 							"query": [
 								{
 									"key": "filter",
-									"value": "values/_{{eventResultStructureId}}_EventType eq 'value 1'"
+									"value": "values/_{{eventResultStructureId}}_EventType eq 'value 2'"
 								}
 							]
 						}
@@ -755,7 +770,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8080/o/api/p/content-space/{{liferayContentSpaceId}}/structured-contents?filter=(values/_{{eventResultStructureId}}_Participants gt 10000)",
+							"raw": "http://localhost:8080/o/api/p/content-space/{{liferayContentSpaceId}}/structured-contents?filter=(values/_{{eventResultStructureId}}_Participants gt 1000)",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -772,7 +787,7 @@
 							"query": [
 								{
 									"key": "filter",
-									"value": "(values/_{{eventResultStructureId}}_Participants gt 10000)"
+									"value": "(values/_{{eventResultStructureId}}_Participants gt 1000)"
 								}
 							]
 						}
@@ -877,7 +892,18 @@
 					"name": "* Filter StructuredContent by Keywords ANY EQ",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/hal+json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-Us",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": ""
@@ -918,9 +944,14 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "Acc",
+								"key": "Accept",
 								"type": "text",
 								"value": "application/hal+json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -966,6 +997,11 @@
 								"key": "Accept",
 								"type": "text",
 								"value": "application/hal+json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-Us",
+								"type": "text"
 							}
 						],
 						"body": {
