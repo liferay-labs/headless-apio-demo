@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "d3037c59-d693-4e96-8675-48ee25e55f90",
+		"name": "Headless Blogs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get blogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/o/api/content-space/{{contentSpaceId}}/blog-posting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"content-space",
+						"{{contentSpaceId}}",
+						"blog-posting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create blog",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"alternativeHeadline\": \"a blog headline\",\n\t\"articleBody\": \"this is a body\",\n\t\"caption\": \"a image\",\n\t\"description\": \"this is an image\",\n\t\"friendlyUrlPath\": \"/url-path\",\n\t\"keywords\": [\"one\", \"two\", \"three\"],\n\t\"headline\": \"this is headline\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/o/api/content-space/{{contentSpaceId}}/blog-posting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"o",
+						"api",
+						"content-space",
+						"{{contentSpaceId}}",
+						"blog-posting"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{password}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{username}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "52c5ca2f-1c66-4027-b085-d4600e75adcb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "23e9e8b7-7a94-48f4-857d-8a9faad67b7e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
